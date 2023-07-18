@@ -3,9 +3,6 @@ const button = document.querySelector('button')
 window.onload = function buttonDisabled() {
     button.disabled = true
 }
-button.addEventListener('click', buttonDisabled)
-
-
 
 function proceedUnlock() {
     const checkbox = document.querySelector('input')
@@ -15,4 +12,3 @@ function proceedUnlock() {
         button.disabled = true
     }
 }
-button.addEventListener('click', proceedUnlock)
