@@ -1,3 +1,3 @@
 function proceedUnlock() {
-    console.log('proceed to quiz')
+    console.log('proceed to quiz!!')
 }
