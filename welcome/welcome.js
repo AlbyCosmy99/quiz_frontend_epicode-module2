@@ -1,14 +1,14 @@
-let button = document.querySelector('button')
+const button = document.querySelector('button')
 
-window.onload = function btnDisabled() {
+window.onload = function buttonDisabled() {
     button.disabled = true
 }
 
 function proceedUnlock() {
-    let input = document.querySelector('input')
-    if(input.checked) {
+    const checkbox = document.querySelector('input')
+    if(checkbox.checked) {
         button.disabled = false
-    } else {
+    } else{
         button.disabled = true
     }
 }
