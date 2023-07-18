@@ -1,3 +1,12 @@
+let button = document.querySelector('button')
+
+window.onload = function btnDisabled() {
+    button.disabled = true
+}
+
 function proceedUnlock() {
-    console.log('proceed to quiz')
+    let input = document.querySelector('input')
+    if(input.checked) {
+        button.disabled = false
+    }
 }
