@@ -8,5 +8,7 @@ function proceedUnlock() {
     let input = document.querySelector('input')
     if(input.checked) {
         button.disabled = false
+    } else {
+        button.disabled = true
     }
 }
