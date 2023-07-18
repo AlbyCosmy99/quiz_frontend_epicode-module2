@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Benchmark - Welcome</title>
+    <link rel="stylesheet" href="mystyle.css">
 </head>
 <body>
-    
+    <div id="title">
+        <h1>Welcome to <strong>your exam</strong></h1>
+    </div>
+
+    <div class="Instruction">
+        <h3><strong>Instruction</strong></h3>
+        <p>We don't expect most engineers to know the answers to all of these
+            <br>questions, so don't worry if you're unsure of a few of them.</p>
+        <ul>
+            <li>Each question is <strong>timed</strong> and can only be <strong>answered once</strong>.</li>
+            <li>Changing browser tab or opening other windows will <strong>invalidate the question</strong>.</li>
+            <li>This exam will take approx. <strong>0-5 minutes</strong>.</li>
+        </ul>
+    </div>
+
+    <div class="preQuiz">      <!-- volendo qui sia la checkbox che il button si possono mettere in due div diversi, al momento lascio così -->
+        <!-- nome classe da cambiare -->
+        <input type="checkbox" value="I promise to answer myself without help from anyone" onclick="proceedUnlock()">
+        <!-- primo nome che mi è venuto in mente per una funzione per sbloccare il tasto "PROCEED"-->
+        <a href="quiz.html">
+            <button>PROCEED</button>    <!-- tasto che si ricollega alla pagina dove ci saranno le domande -->
+        </a>
+    </div>
+
+    <script src="quiz.js"></script> <!-- *VEDERE MESSAGGIO SU DISCORD* -->
 </body>
 </html>
