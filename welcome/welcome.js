@@ -5,6 +5,8 @@ window.onload = function buttonDisabled() {
 }
 
 function proceedUnlock() {
+  
+
     const checkbox = document.querySelector('input')
     if(checkbox.checked) {
         button.disabled = false
