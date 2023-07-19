@@ -1,5 +1,7 @@
 import { questions } from "../questions/questions.js"
 
+let shuffledQuestions = shuffleAnswers(questions)
+
 let points = 0;
 
 let index = 0;
@@ -13,7 +15,7 @@ const PROCEED_BTN_ID_NAME = 'proceedBtn'
 const QUESTION_TEXT_ID_NAME = 'titleQuiz'
 const QUESTION_NUMBER_ID_NAME = 'questionNumber'
 
-const MAX_QUESTIONS = questions.length
+const MAX_QUESTIONS = shuffledQuestions.length
 
 let answersContainer = document.querySelector('#' + ANSWERS_CONTAINER_ID_NAME)
 let questionContainer = document.querySelector('#' + QUESTION_TEXT_ID_NAME)
@@ -27,7 +29,7 @@ window.onload = function load(){
 
 function nextQuestion() {
     if(index > 0) {
-        const previousQuestion = questions[index - 1];
+        const previousQuestion = shuffledQuestions[index - 1];
         inputButtons = document.querySelectorAll('input[type=radio]')
         for(const inputButton of inputButtons) {
             if(inputButton.checked) {
@@ -38,7 +40,7 @@ function nextQuestion() {
         }
     }
 
-    if(index >= questions.length){
+    if(index >= shuffledQuestions.length){
         savePoints()
         showResults()
         return 
@@ -51,7 +53,7 @@ function nextQuestion() {
 }
 
 function showQuestionAndAnswers() {
-    const question = questions[index];
+    const question = shuffledQuestions[index];
 
     let answers = question.incorrect_answers
     answers.push(question.correct_answer)
@@ -79,11 +81,11 @@ function showQuestionAndAnswers() {
 }
 
 function shuffleAnswers(arr) {
-    return arr.sort(() => Math.random() - 0.5); 
+    return arr.sort(() => Math.random() - 0.5);
 }
 
 function showResults() {
-    window.location.href = '../results/results.html'
+    window.location.href = '../results/results.html?points=' + points
 }
 
 function savePoints() {
