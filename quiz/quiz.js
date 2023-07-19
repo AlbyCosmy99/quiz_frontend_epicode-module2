@@ -41,7 +41,6 @@ function nextQuestion() {
     }
 
     if(index >= shuffledQuestions.length){
-        savePoints()
         showResults()
         return 
     }
