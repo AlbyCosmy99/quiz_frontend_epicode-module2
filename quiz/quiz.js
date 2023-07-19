@@ -83,10 +83,24 @@ function shuffleAnswers(arr) {
     return arr.sort(() => Math.random() - 0.5);
 }
 
-// function showResults() {
-//     window.location.href = '../results/results.html?points=' + points
-// }
+function showResults() {
+    let resultsContainer = document.querySelector('.results')
+    let testContainer = document.querySelector('.testing')
 
-// function savePoints() {
-//     sessionStorage.setItem('points', points)
-// }
+    let pointsText = document.querySelector('#points')
+    pointsText.innerHTML = points
+
+    let finalText = document.querySelector('#finalText')
+
+    const PASSED_TEST_POINTS = Math.ceil((shuffledQuestions.length*6)/10)
+
+    if(points >= PASSED_TEST_POINTS) {
+        finalText.innerHTML = 'Complimenti, Hai superato il test!'
+    }
+    else {
+        finalText.innerHTML = 'Peccato, non hai superato il test!'
+    }
+
+    resultsContainer.style.display = 'block'
+    testContainer.style.display = 'none'
+}
