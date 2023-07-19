@@ -83,6 +83,10 @@ function shuffleAnswers(arr) {
     return arr.sort(() => Math.random() - 0.5);
 }
 
-function showResults() {
-     
-}
+// function showResults() {
+//     window.location.href = '../results/results.html?points=' + points
+// }
+
+// function savePoints() {
+//     sessionStorage.setItem('points', points)
+// }
