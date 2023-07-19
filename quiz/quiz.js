@@ -41,7 +41,6 @@ function nextQuestion() {
     }
 
     if(index >= shuffledQuestions.length){
-        savePoints()
         showResults()
         return 
     }
@@ -85,9 +84,5 @@ function shuffleAnswers(arr) {
 }
 
 function showResults() {
-    window.location.href = '../results/results.html?points=' + points
-}
-
-function savePoints() {
-    sessionStorage.setItem('points', points)
+     
 }
