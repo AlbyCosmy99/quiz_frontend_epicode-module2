@@ -6,8 +6,6 @@ let points = 0;
 
 let index = 0;
 
-const PASSED_TEST_POINTS = 6
-
 let inputButtons = []
 const INPUT_ATTRIBUTE_NAME = 'question'
 
@@ -94,11 +92,13 @@ function showResults() {
 
     let finalText = document.querySelector('#finalText')
 
+    const PASSED_TEST_POINTS = Math.ceil((shuffledQuestions.length*6)/10)
+
     if(points >= PASSED_TEST_POINTS) {
-        finalText.innerHTML = 'Complimenti, Hai superato il test! :)'
+        finalText.innerHTML = 'Complimenti, Hai superato il test!'
     }
     else {
-        finalText.innerHTML = 'Peccato, non hai superato il test! :('
+        finalText.innerHTML = 'Peccato, non hai superato il test!'
     }
 
     resultsContainer.style.display = 'block'
