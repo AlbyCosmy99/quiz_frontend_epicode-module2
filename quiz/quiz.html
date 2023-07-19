@@ -14,8 +14,6 @@
 
     </div>
     <button class="btn">click</button>
-    <p class="points">Points: </p>
-
 
     SERENA LAVORA DA QUI IN GIU'. NON MODIFICARE/CANCELLARE IL CODICE SOPRA COMMENTATO. GRAZIE! -->
 
@@ -27,30 +25,31 @@
 
     <!--Time Tondo-->
     <div class="tondo">
-        <h2>SECONDS 16 REMAINIG</h2>
+        <h2>16 SECONDS REMAINING</h2> 
     </div>
 
     <div id="titleQuiz">
-        <h1>How can i create a <br>checkbox in HTML? </h1>
+        <h2 class="question"></h2> <!-- tolgo il <br> -->
     </div>
 
 <!--seconda parte-->
     
-    <div id="question">
-        <button class="question1">input type ="check"</button>
-        <button class="question2">input type ="checkbox"</button>
-        <button class="question3" >"checkbox"</button>
-        <button class="question4">input type ="buttom"</button>
-
-        
-<!--terza parte-->
-
-        <h3>QUESTION 1/10</h3>
-        <a href="resuls.html"><button>PROCEED</button> <!--collegamento con la terza pagina exam_info-->
-        </a>
+    <div id="answers">
     </div>
 
-    <script src="quiz.js"></script>
+    <h3>QUESTION: <span id="questionNumber"></span></h3> <!-- ho inserito lo span per selezionare solo il numero e non il testo -->
+    <button id="proceedBtn">PROCEED</button>
+    
+    <!-- il button proceed serve per andare alla prossima domanda, non per andare alla pagina
+    dei risultati. Alla pagina dei risultati si va una volta che tutte le domande sono 
+    state ispezionate.Tolgo quindi il tag <a> -->
+    <!-- Inoltre tolgo il tag h3 dal div delle domande, perche' non sono abbastanza inerenti per stare
+    nello stesso contenitore -->
+    <!-- Assegno un id al tag h3 delle domande per poterlo selezionare con js -->
+    <!-- Assegno un id al button proceed delle domande per poterlo selezionare con js -->
+
+    <script type="module" src="quiz.js"></script>
+    <!-- aggiungo type=module allo script per poter importare le 'questions' nello script stesso -->
 </body>
 
 </html>
