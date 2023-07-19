@@ -6,6 +6,9 @@ let points = 0;
 
 let index = 0;
 
+const TIME_PER_QUESTION = 5
+let timeouts = []
+
 let inputButtons = []
 const INPUT_ATTRIBUTE_NAME = 'question'
 
@@ -28,6 +31,10 @@ window.onload = function load(){
 }
 
 function nextQuestion() {
+    for(let timeout of timeouts) {
+        clearTimeout(timeout)
+    }
+
     if(index > 0) {
         const previousQuestion = shuffledQuestions[index - 1];
         inputButtons = document.querySelectorAll('input[type=radio]')
@@ -49,6 +56,8 @@ function nextQuestion() {
     
     showQuestionAndAnswers()
     inputButtons = []
+
+    timeout()
 }
 
 function showQuestionAndAnswers() {
@@ -103,4 +112,29 @@ function showResults() {
 
     resultsContainer.style.display = 'block'
     testContainer.style.display = 'none'
+}
+
+
+//countdown 
+
+function setTime(start, timeout) {
+    let time = document.querySelector('#time')
+    timeouts.push(
+        setTimeout(function(){
+            time.innerHTML = start
+    
+            if(start === 0) {
+                nextQuestion()
+            }
+        },timeout)
+    ) 
+}
+
+function timeout(timeout = 1000) {
+    let _start = TIME_PER_QUESTION
+    let currentTime = TIME_PER_QUESTION
+    while(currentTime >= 0){
+        let timeValue = (_start-currentTime) + 1
+        setTime(currentTime--, 1000*timeValue)
+    }
 }
