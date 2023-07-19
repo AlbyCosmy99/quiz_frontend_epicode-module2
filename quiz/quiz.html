@@ -9,41 +9,37 @@
 </head>
 
 <body>
-    <div class="questionContainer">
-        <h2 class="question"></h2>
-    </div>
-
-    <!-- SERENA LAVORA DA QUI IN GIU'. NON MODIFICARE/CANCELLARE IL CODICE SOPRA COMMENTATO. GRAZIE! -->
-
-    <!--prima parte-->
     <header>
         <img src="../assets/epicode_logo.png" alt="epicode_logo">
-       <!--<p id="time">&#9719;</p>--> <!--qui avevo trovato un carattere time al posto del "tondo"-->
     </header>
 
-    <!--Time Tondo-->
-    <div class="tondo">
-        <h2>16 SECONDS REMAINING</h2> 
-    </div>
-
-    <div id="titleQuiz">
-    </div>
-
-<!--seconda parte-->
+    <div class="testing">
+        <div class="tondo">
+            <h2>16 SECONDS REMAINING</h2> 
+        </div>
     
-    <div id="answers">
+        <div id="titleQuiz">
+        </div>
+    
+        <div id="answers">
+        </div>
+    
+        <h3>QUESTION: <span id="questionNumber"></span></h3> <!-- ho inserito lo span per selezionare solo il numero e non il testo -->
+        <button id="proceedBtn">PROCEED</button>
+        
+        <!-- il button proceed serve per andare alla prossima domanda, non per andare alla pagina
+        dei risultati. Alla pagina dei risultati si va una volta che tutte le domande sono 
+        state ispezionate.Tolgo quindi il tag <a> -->
+        <!-- Inoltre tolgo il tag h3 dal div delle domande, perche' non sono abbastanza inerenti per stare
+        nello stesso contenitore -->
+        <!-- Assegno un id al tag h3 delle domande per poterlo selezionare con js -->
+        <!-- Assegno un id al button proceed delle domande per poterlo selezionare con js -->
     </div>
 
-    <h3>QUESTION: <span id="questionNumber"></span></h3> <!-- ho inserito lo span per selezionare solo il numero e non il testo -->
-    <button id="proceedBtn">PROCEED</button>
-    
-    <!-- il button proceed serve per andare alla prossima domanda, non per andare alla pagina
-    dei risultati. Alla pagina dei risultati si va una volta che tutte le domande sono 
-    state ispezionate.Tolgo quindi il tag <a> -->
-    <!-- Inoltre tolgo il tag h3 dal div delle domande, perche' non sono abbastanza inerenti per stare
-    nello stesso contenitore -->
-    <!-- Assegno un id al tag h3 delle domande per poterlo selezionare con js -->
-    <!-- Assegno un id al button proceed delle domande per poterlo selezionare con js -->
+    <div class="results">
+        <h4>Punteggio finale: <span class="points"></span></h4>
+        <p></p>
+    </div>
 
     <script type="module" src="quiz.js"></script>
     <!-- aggiungo type=module allo script per poter importare le 'questions' nello script stesso -->
