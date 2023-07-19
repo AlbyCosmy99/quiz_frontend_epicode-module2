@@ -88,7 +88,7 @@ function showResults() {
     let testContainer = document.querySelector('.testing')
 
     let pointsText = document.querySelector('#points')
-    pointsText.innerHTML = points
+    pointsText.innerHTML = points + '/' + MAX_QUESTIONS + ' (' + (points/MAX_QUESTIONS)*100 + '%)'
 
     let finalText = document.querySelector('#finalText')
 

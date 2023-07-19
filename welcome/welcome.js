@@ -1,4 +1,4 @@
-// const button = document.querySelector('.cta')
+//let button = document.querySelector('.cta')
 
 window.onload = function buttonDisabled() {
     const button = document.querySelector('.cta')
@@ -10,7 +10,9 @@ function proceedUnlock() {
     const checkbox = document.querySelector('input')
     if(checkbox.checked) {
         button.disabled = false
+        button.style.cursor = 'pointer'
     } else{
         button.disabled = true
+        button.style.cursor = 'not-allowed'
     }
 }
