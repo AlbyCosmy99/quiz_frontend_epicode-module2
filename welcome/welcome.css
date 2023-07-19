@@ -38,30 +38,31 @@ h3 {
     color: #B22B8A;
 }
 
+
 p,ul,li{
     color: white;
     font-family: 'Inter', sans-serif;
-    font-weight: 800;
+    font-weight: 300;
 }
 
 ul {
-    margin: 40px 0 40px 40px;
+    padding: 40px;
     line-height: 1.5rem;
-    margin-bottom: 64px;
 }
 
 .preQuiz {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
     color: white;
     font-family: 'Inter', sans-serif;
 }
 
-.prequiz label {
-    font-size: 12px;
+.left {
+    font-weight: 500;
+    font-size: 14px;
 }
-
 
 .cta {
     padding: 16px 48px 16px 48px;
@@ -80,4 +81,3 @@ ul {
     transition: 0.3s;
     cursor: pointer;
 }
-

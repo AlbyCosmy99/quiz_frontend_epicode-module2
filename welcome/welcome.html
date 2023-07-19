@@ -9,7 +9,7 @@
     <!-- Link per Font Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Outfit:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Outfit:wght@400;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -27,15 +27,20 @@
                 <li>This exam will take approx. <strong>0-5 minutes</strong>.</li>
             </ul>
         </div>
-        <div class="preQuiz">
-            <input name="proceed" type="checkbox" onclick="proceedUnlock()">
-            <label for="proceed">
-                I promise to answer myself without help from anyone
-            </label>                     
-            <a href="../quiz/quiz.html">
-                <button class="cta">PROCEED</button>
-            </a>
-        </div>
+        <section class="preQuiz">
+                <div class="left">
+                    <input type="checkbox" onclick="proceedUnlock()">
+                    <label for="checkox">
+                        I promise to answer myself without help from anyone
+                    </label>
+                </div>
+                <div class="right">
+                    <a href="../quiz/quiz.html">
+                        <button class="cta">PROCEED</button>
+                    </a>
+                </div>                     
+        </section>
+        
     </main>    
 
     <script src="welcome.js"></script>
