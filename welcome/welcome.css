@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header .logo{
+    width: 150px;
+}
+
+body {
+    width: 70%;
+    height: 95vh;
+    margin: auto;
+    padding-top: 36px;
+    background-image: url(/assets/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    padding: 124px 0 124px 0;
+}
+
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 3rem;
+    color: white;
+    margin-bottom: 32px;
+}
+
+h3 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 3rem;
+    color: #B22B8A;
+}
+
+p,ul,li{
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+}
+
+ul {
+    margin: 40px 0 40px 40px;
+    line-height: 1.5rem;
+    margin-bottom: 64px;
+}
+
+.preQuiz {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.prequiz label {
+    font-size: 12px;
+}
+
+
+.cta {
+    padding: 16px 48px 16px 48px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0;
+    border: 0;
+    background-color: #72bcbd;
+    transition: 0.3s;
+}
+
+.cta:hover{
+    background-color: #75FBFD;
+    box-shadow: #75FBFD 0px 0px 20px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
