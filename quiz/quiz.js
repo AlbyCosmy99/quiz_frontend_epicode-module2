@@ -6,7 +6,7 @@ let points = 0;
 
 let index = 0;
 
-const TIME_PER_QUESTION = 5
+const TIME_PER_QUESTION = 360
 let timeouts = []
 
 let inputButtons = []
