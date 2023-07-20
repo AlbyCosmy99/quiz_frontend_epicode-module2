@@ -55,6 +55,7 @@ function nextQuestion() {
     }
 
     questionNumberTag.innerHTML = index + 1 + '/' + MAX_QUESTIONS
+    questionNumberTag.style.userSelect = 'none'
     
     showQuestionAndAnswers()
     inputButtons = []
@@ -74,6 +75,7 @@ function showQuestionAndAnswers() {
 
     let h2 = document.createElement('h2')
     h2.className = QUESTION_CLASS_NAME
+    h2.style.userSelect = 'none'
     h2.innerHTML = question.question
     questionContainer.appendChild(h2)
 
@@ -94,13 +96,19 @@ function showQuestionAndAnswers() {
 
         let label = document.createElement('label')
         label.innerHTML = answers[i]
+        label.style.userSelect = 'none'
         div.appendChild(label);
 
         div.addEventListener('click', function answerClick() {
             let children = this.childNodes
             let input = children[0]
-            let label = children[1]
-            input.checked = true
+            if(!input.checked) {
+                input.checked = true
+            }
+            else {
+                input.checked = false
+            }
+            
         })
     }
 
@@ -141,7 +149,7 @@ function showResults() {
     //circular points rapresentation
     let circularResults = document.querySelector('.circularPercentageVisualization')
     let pointsDeg = (percentage*360)/100
-    circularResults.style.background = 'conic-gradient(#9D1D8F 0deg ' + (360 - pointsDeg) + 'deg, #00FFFF ' + (360 - pointsDeg) + 'deg 360deg)'
+    circularResults.style.background = 'conic-gradient(#00FFFF 0deg ' + pointsDeg + 'deg, #9D1D8F ' + pointsDeg + 'deg 360deg)'
 
 
     //show results
