@@ -5,19 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benchmark - Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Outfit:wght@400;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="quiz.css">
 </head>
 
 <body>
     <header>
-        <img src="../assets/epicode_logo.png" alt="epicode_logo">
+        <img class="logo" src="../assets/epicode_logo.png" alt="epicode_logo">
     </header>
 
     <!-- quiz -->
 
     <div class="testing">
         <div class="tondo">
-            <h2>SECONDS <span id="time"></span> REMAINING</h2> 
+            <p  class="seconds" >SECONDS <br> <span id="time"></span> <br> REMAINING</p> 
         </div>
     
         <div id="titleQuiz">
@@ -25,9 +28,7 @@
     
         <div id="answers">
         </div>
-    
-        <h3>QUESTION: <span id="questionNumber"></span></h3> <!-- ho inserito lo span per selezionare solo il numero e non il testo -->
-        <button id="proceedBtn">PROCEED</button>
+        
         
         <!-- il button proceed serve per andare alla prossima domanda, non per andare alla pagina
         dei risultati. Alla pagina dei risultati si va una volta che tutte le domande sono 
@@ -36,7 +37,14 @@
         nello stesso contenitore -->
         <!-- Assegno un id al tag h3 delle domande per poterlo selezionare con js -->
         <!-- Assegno un id al button proceed delle domande per poterlo selezionare con js -->
+
+        <!-- numero domanda + tasto proceed -->
+        <div class="bottom">
+            <h3 class="numberOfQuestion">QUESTION: <span id="questionNumber"></span><span id="backslash"></span><span id="maxquestionNumber"></span></h3> <!-- ho inserito lo span per selezionare solo il numero e non il testo -->
+            <button id="proceedBtn">PROCEED</button>
+        </div>
     </div>
+    
 
 
     <!-- results -->
@@ -49,7 +57,6 @@
     </div>
 
     <script type="module" src="quiz.js"></script>
-    <!-- aggiungo type=module allo script per poter importare le 'questions' nello script stesso -->
 </body>
 
 </html>

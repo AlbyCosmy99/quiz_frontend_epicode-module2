@@ -6,8 +6,9 @@ let points = 0;
 
 let index = 0;
 
-const TIME_PER_QUESTION = 5
+const TIME_PER_QUESTION = 30
 let timeouts = []
+let timeCircle = document.querySelector('.tondo')
 
 let inputButtons = []
 const INPUT_ATTRIBUTE_NAME = 'question'
@@ -23,6 +24,10 @@ const MAX_QUESTIONS = shuffledQuestions.length
 let answersContainer = document.querySelector('#' + ANSWERS_CONTAINER_ID_NAME)
 let questionContainer = document.querySelector('#' + QUESTION_TEXT_ID_NAME)
 let questionNumberTag = document.querySelector('#' + QUESTION_NUMBER_ID_NAME)
+let backslashTag = document.querySelector('#backslash')
+let maxQuestionNumberTag = document.querySelector('#maxquestionNumber')
+
+let currentInputButtons = []
 
 window.onload = function load(){
     nextQuestion()
@@ -52,7 +57,10 @@ function nextQuestion() {
         return 
     }
 
-    questionNumberTag.innerHTML = index + 1 + '/' + MAX_QUESTIONS
+    questionNumberTag.innerHTML = index + 1
+    backslashTag.innerHTML = '/'
+    maxQuestionNumberTag.innerHTML = MAX_QUESTIONS
+    questionNumberTag.style.userSelect = 'none'
     
     showQuestionAndAnswers()
     inputButtons = []
@@ -72,17 +80,41 @@ function showQuestionAndAnswers() {
 
     let h2 = document.createElement('h2')
     h2.className = QUESTION_CLASS_NAME
+    h2.style.userSelect = 'none'
     h2.innerHTML = question.question
     questionContainer.appendChild(h2)
 
     for(let i = 0; i < answers.length; i++) {
+        let div = document.createElement('div')
+        div.className = 'item'
+
+        answersContainer.appendChild(div);
+
         let input = document.createElement('input')
         input.setAttribute('type', 'radio')
         input.setAttribute('name', INPUT_ATTRIBUTE_NAME)
-
-        answersContainer.appendChild(input);
         input.value = answers[i]
-        input.outerHTML += answers[i]
+
+        currentInputButtons.push(input)
+
+        div.appendChild(input);
+
+        let label = document.createElement('label')
+        label.innerHTML = answers[i]
+        label.style.userSelect = 'none'
+        div.appendChild(label);
+
+        div.addEventListener('click', function answerClick() {
+            let children = this.childNodes
+            let input = children[0]
+            if(!input.checked) {
+                input.checked = true
+            }
+            else {
+                input.checked = false
+            }
+            
+        })
     }
 
     index++;
@@ -91,6 +123,7 @@ function showQuestionAndAnswers() {
 function shuffleAnswers(arr) {
     return arr.sort(() => Math.random() - 0.5);
 }
+
 
 //results
 
@@ -121,14 +154,13 @@ function showResults() {
     //circular points rapresentation
     let circularResults = document.querySelector('.circularPercentageVisualization')
     let pointsDeg = (percentage*360)/100
-    circularResults.style.background = 'conic-gradient(#9D1D8F 0deg ' + (360 - pointsDeg) + 'deg, #00FFFF ' + (360 - pointsDeg) + 'deg 360deg)'
+    circularResults.style.background = 'conic-gradient(#00FFFF 0deg ' + pointsDeg + 'deg, #9D1D8F ' + pointsDeg + 'deg 360deg)'
 
 
     //show results
     resultsContainer.style.display = 'block'
     testContainer.style.display = 'none'
 }
-
 
 //countdown 
 
@@ -137,6 +169,9 @@ function setTime(start, timeout) {
     timeouts.push(
         setTimeout(function(){
             time.innerHTML = start
+            let currentTimePercentage = (start/TIME_PER_QUESTION)*100
+            let currentGrade = (360*currentTimePercentage)/100
+            timeCircle.style.borderImage = 'conic-gradient(transparent 0deg ' + (360 - currentGrade) + 'deg, #00FFFF ' + (360 - currentGrade) + 'deg 360deg) 1'
     
             if(start === 0) {
                 nextQuestion()
