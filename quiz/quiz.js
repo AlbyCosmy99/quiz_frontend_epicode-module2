@@ -23,6 +23,8 @@ const MAX_QUESTIONS = shuffledQuestions.length
 let answersContainer = document.querySelector('#' + ANSWERS_CONTAINER_ID_NAME)
 let questionContainer = document.querySelector('#' + QUESTION_TEXT_ID_NAME)
 let questionNumberTag = document.querySelector('#' + QUESTION_NUMBER_ID_NAME)
+let backslashTag = document.querySelector('#backslash')
+let maxQuestionNumberTag = document.querySelector('#maxquestionNumber')
 
 let currentInputButtons = []
 
@@ -54,7 +56,9 @@ function nextQuestion() {
         return 
     }
 
-    questionNumberTag.innerHTML = index + 1 + '/' + MAX_QUESTIONS
+    questionNumberTag.innerHTML = index + 1
+    backslashTag.innerHTML = '/'
+    maxQuestionNumberTag.innerHTML = MAX_QUESTIONS
     questionNumberTag.style.userSelect = 'none'
     
     showQuestionAndAnswers()
