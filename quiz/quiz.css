@@ -69,7 +69,7 @@ h3 #questionNumber {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10rem;
     height: 400px;
 }
 
