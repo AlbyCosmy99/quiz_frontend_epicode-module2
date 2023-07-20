@@ -24,6 +24,8 @@ let answersContainer = document.querySelector('#' + ANSWERS_CONTAINER_ID_NAME)
 let questionContainer = document.querySelector('#' + QUESTION_TEXT_ID_NAME)
 let questionNumberTag = document.querySelector('#' + QUESTION_NUMBER_ID_NAME)
 
+let currentInputButtons = []
+
 window.onload = function load(){
     nextQuestion()
     const btn = document.querySelector('#' + PROCEED_BTN_ID_NAME)
@@ -76,13 +78,30 @@ function showQuestionAndAnswers() {
     questionContainer.appendChild(h2)
 
     for(let i = 0; i < answers.length; i++) {
+        let div = document.createElement('div')
+        div.className = 'item'
+
+        answersContainer.appendChild(div);
+
         let input = document.createElement('input')
         input.setAttribute('type', 'radio')
         input.setAttribute('name', INPUT_ATTRIBUTE_NAME)
-
-        answersContainer.appendChild(input);
         input.value = answers[i]
-        input.outerHTML += answers[i]
+
+        currentInputButtons.push(input)
+
+        div.appendChild(input);
+
+        let label = document.createElement('label')
+        label.innerHTML = answers[i]
+        div.appendChild(label);
+
+        div.addEventListener('click', function answerClick() {
+            let children = this.childNodes
+            let input = children[0]
+            let label = children[1]
+            input.checked = true
+        })
     }
 
     index++;
@@ -91,6 +110,7 @@ function showQuestionAndAnswers() {
 function shuffleAnswers(arr) {
     return arr.sort(() => Math.random() - 0.5);
 }
+
 
 //results
 
@@ -128,7 +148,6 @@ function showResults() {
     resultsContainer.style.display = 'block'
     testContainer.style.display = 'none'
 }
-
 
 //countdown 
 
