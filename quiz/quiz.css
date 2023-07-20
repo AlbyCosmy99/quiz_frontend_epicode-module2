@@ -139,6 +139,10 @@ input[type=radio]:checked+label {
     margin: 0px;
 }
 
+.testing .numberOfQuestion {
+    user-select: none;
+}
+
 
 /* css results  (SERENA) */
 
