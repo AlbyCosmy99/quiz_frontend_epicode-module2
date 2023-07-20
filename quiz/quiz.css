@@ -8,7 +8,6 @@ body {
     color: white; /* Testo bianco per tutto il body */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra il contenuto orizzontalmente */
     height: 100vh; 
 }
 
@@ -61,6 +60,8 @@ h3 #questionNumber {
     font-family: 'Outfit', sans-serif;
     font-weight: 100;
     letter-spacing: 0.2rem;
+    position: relative;
+    left: 100px;
 }
 
 /* Aggiunta dello stile per le risposte con radio button */
@@ -82,6 +83,8 @@ h3 #questionNumber {
     background-color: #75FBFD;
     transition: 0.3s;
     cursor: pointer;
+    position: relative;
+    left: 23rem;
 }
 
 #proceedBtn:hover{
@@ -100,10 +103,13 @@ h3 #questionNumber {
 h2{
     font-family: 'Outfit', sans-serif;
     font-weight: 400;
-    font-size: 60px;
+    font-size: 48px;
     line-height: 3rem;
     color: white;
     margin-bottom: 32px;
+    padding-left: 38px;
+    padding-right: 30px;
+    text-align: center;
 }
 
 input[type=radio] {
@@ -120,12 +126,13 @@ input[type=radio]+label {
     transition: background 0.2s; /* Animazione del colore di sfondo al passaggio del cursore */
 }
 
-input[type=radio]+label:hover {
-    background: #1E90FF; /* Cambio del colore di sfondo al passaggio del cursore */
-}
+/* input[type=radio]+label:hover {
+     background: #1E90FF; Cambio del colore di sfondo al passaggio del cursore
+    
+} */
 
 input[type=radio]:checked+label {
-    background: red;
+    background: #d20094;
 }
 
 #answers {
@@ -153,5 +160,4 @@ input[type=radio]:checked+label {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-
 }
