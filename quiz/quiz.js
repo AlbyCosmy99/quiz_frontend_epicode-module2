@@ -76,13 +76,19 @@ function showQuestionAndAnswers() {
     questionContainer.appendChild(h2)
 
     for(let i = 0; i < answers.length; i++) {
+        let div = document.createElement('div')
+        div.className = 'item'
+
+        answersContainer.appendChild(div);
+
         let input = document.createElement('input')
         input.setAttribute('type', 'radio')
         input.setAttribute('name', INPUT_ATTRIBUTE_NAME)
+        div.appendChild(input);
 
-        answersContainer.appendChild(input);
-        input.value = answers[i]
-        input.outerHTML += answers[i]
+        let label = document.createElement('label')
+        label.innerHTML = answers[i]
+        div.appendChild(label);
     }
 
     index++;
@@ -91,6 +97,11 @@ function showQuestionAndAnswers() {
 function shuffleAnswers(arr) {
     return arr.sort(() => Math.random() - 0.5);
 }
+
+function log() {
+    console.log('ok')
+}
+
 
 //results
 

@@ -1,20 +1,5 @@
 /* css quiz */
 
-
-
-/* css results  (SERENA) */
-
-.results {
-    display: none; 
-}
-
-/* i attributi width e height possono essere modificati a piacimento ma no tolti. Inoltre i due attributi devono essere uguali tra loro. */
-.circularPercentageVisualization {  
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-
-}
 body {
     background-image: url("/assets/bg.jpg");
     background-size: cover;
@@ -62,7 +47,7 @@ header h1 {
 }
 
 .seconds{
-    font-size: 150px;
+    font-size: 10px;
 }
 
 #time{
@@ -83,7 +68,7 @@ div {
 }
 
 input[type=radio] {
-    display: none;
+    visibility: hidden;
 }
 
 input[type=radio]+label {
@@ -102,4 +87,28 @@ input[type=radio]+label:hover {
 
 input[type=radio]:checked+label {
     background: red;
+}
+
+#answers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0px;
+}
+
+
+/* css results  (SERENA) */
+
+.results {
+    display: none; 
+}
+.circularPercentageVisualization {  
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
 }
