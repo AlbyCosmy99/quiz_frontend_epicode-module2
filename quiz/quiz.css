@@ -35,7 +35,7 @@ header h1 {
     height: 100px;
     border-radius: 50%;
     background-color: transparent;
-    border: 5px solid #00FFFF ; /* Colore celeste per il bordo */
+    border: 5px solid transparent;
     display: flex;
     justify-content: center;
     color: white; /* Colore celeste per il numero dei secondi */
@@ -146,10 +146,9 @@ input[type=radio]:checked+label {
     margin: 0px;
 }
 
-.testing .numberOfQuestion {
+.numberOfQuestion {
     user-select: none;
 }
-
 
 /* css results  (SERENA) */
 
