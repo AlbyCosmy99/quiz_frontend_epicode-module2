@@ -92,12 +92,19 @@ function shuffleAnswers(arr) {
     return arr.sort(() => Math.random() - 0.5);
 }
 
+//results
+
 function showResults() {
     let resultsContainer = document.querySelector('.results')
     let testContainer = document.querySelector('.testing')
 
     let pointsText = document.querySelector('#points')
-    pointsText.innerHTML = points + '/' + MAX_QUESTIONS + ' (' + (points/MAX_QUESTIONS)*100 + '%)'
+    let percentage = (points/MAX_QUESTIONS)*100
+    pointsText.innerHTML = points + '/' + MAX_QUESTIONS + ' (' + percentage + '%)'
+
+    let wrongPointsText = document.querySelector('#wrong-points')
+    let wrongPercentage = ((MAX_QUESTIONS - points)/MAX_QUESTIONS)*100
+    wrongPointsText.innerHTML = (MAX_QUESTIONS - points) + '/' + MAX_QUESTIONS + ' (' + wrongPercentage + '%)'
 
     let finalText = document.querySelector('#finalText')
 
@@ -110,6 +117,14 @@ function showResults() {
         finalText.innerHTML = 'Peccato, non hai superato il test!'
     }
 
+
+    //circular points rapresentation
+    let circularResults = document.querySelector('.circularPercentageVisualization')
+    let pointsDeg = (percentage*360)/100
+    circularResults.style.background = 'conic-gradient(#9D1D8F 0deg ' + (360 - pointsDeg) + 'deg, #00FFFF ' + (360 - pointsDeg) + 'deg 360deg)'
+
+
+    //show results
     resultsContainer.style.display = 'block'
     testContainer.style.display = 'none'
 }

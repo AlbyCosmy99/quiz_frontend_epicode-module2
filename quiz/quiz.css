@@ -1,3 +1,19 @@
+/* css quiz */
+
+
+
+/* css results  (SERENA) */
+
 .results {
-    display: none;
+    display: none; 
 }
+
+/* i attributi width e height possono essere modificati a piacimento ma no tolti. Inoltre i due attributi devono essere uguali tra loro. */
+.circularPercentageVisualization {  
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+}
+
+
