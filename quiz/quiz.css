@@ -150,13 +150,58 @@ input[type=radio]:checked+label {
     user-select: none;
 }
 
+body {
+    background-image: url(/assets/bg.jpg);
+    background-repeat: no-repeat;                               /*SFONDO*/
+    background-size: cover;
+}
+
+
+
+
+img {
+    text-align: center;
+    width: 150px;                        /*IMMAGINE EPICODE*/
+
+}
+
+.testing {
+    text-align: center;
+    color: white;
+
+}
+
+#finalText {
+    color: white;
+    text-align: center;
+    position: absolute;                   /*PECCATO NON HAI SUPERATO IL TEST*/
+    bottom: 300px;
+}
+
+h4 {
+    color: white;                      /*RISPOSTE CORRETTE*/
+    text-align: center;
+
+
+}
+
+
+
+.circularPercentageVisualization {                     /*CERCHIO*/
+    text-align: center;
+}
+
+
 /* css results  (SERENA) */
 
 .results {
-    display: none; 
+    display: none;
 }
-.circularPercentageVisualization {  
+
+/* i attributi width e height possono essere modificati a piacimento ma no tolti. Inoltre i due attributi devono essere uguali tra loro. */
+.circularPercentageVisualization {
     width: 200px;
     height: 200px;
     border-radius: 50%;
+
 }
