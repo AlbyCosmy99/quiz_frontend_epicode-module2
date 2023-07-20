@@ -145,9 +145,11 @@ function showResults() {
 
     if(points >= PASSED_TEST_POINTS) {
         finalText.innerHTML = 'Complimenti, Hai superato il test!'
+        finalText.style.color = 'green'
     }
     else {
         finalText.innerHTML = 'Peccato, non hai superato il test!'
+        finalText.style.color = 'red'
     }
 
 
