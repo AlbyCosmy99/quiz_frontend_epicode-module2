@@ -6,7 +6,8 @@ let points = 0;
 
 let index = 0;
 
-const TIME_PER_QUESTION = 30
+const TIME_PER_QUESTION = 300
+
 let timeouts = []
 let timeCircle = document.querySelector('.tondo')
 
@@ -31,8 +32,12 @@ let currentInputButtons = []
 
 window.onload = function load(){
     nextQuestion()
+    
     const btn = document.querySelector('#' + PROCEED_BTN_ID_NAME)
     btn.addEventListener('click',nextQuestion)
+
+    let timeContainer = document.querySelector('.seconds')
+    timeContainer.style.userSelect = 'none'
 }
 
 function nextQuestion() {
@@ -62,8 +67,9 @@ function nextQuestion() {
     maxQuestionNumberTag.innerHTML = MAX_QUESTIONS
     questionNumberTag.style.userSelect = 'none'
     
-    showQuestionAndAnswers()
     inputButtons = []
+    currentInputButtons = []
+    showQuestionAndAnswers()
 
     timeout()
 }
@@ -81,7 +87,22 @@ function showQuestionAndAnswers() {
     let h2 = document.createElement('h2')
     h2.className = QUESTION_CLASS_NAME
     h2.style.userSelect = 'none'
-    h2.innerHTML = question.question
+    let p1 = document.createElement('p')
+    p1.style.margin = '0px'
+    let p2 = document.createElement('p')
+    p2.style.margin = '0px'
+
+
+    //divido la domanda in due righe e metto la seconda riga 'bold()'
+    let currentQuestion = question.question
+    let arrayCharsQuestion = currentQuestion.split(' ')
+    let firstHalfQuestion = arrayCharsQuestion.slice(0,arrayCharsQuestion.length/2).join(' ')
+    let secondHalfQuestion = arrayCharsQuestion.slice(arrayCharsQuestion.length/2, arrayCharsQuestion.length).join(' ')
+    p1.innerHTML = firstHalfQuestion
+    p2.innerHTML = secondHalfQuestion.bold()
+
+    h2.appendChild(p1)
+    h2.appendChild(p2)
     questionContainer.appendChild(h2)
 
     for(let i = 0; i < answers.length; i++) {
@@ -102,6 +123,7 @@ function showQuestionAndAnswers() {
         let label = document.createElement('label')
         label.innerHTML = answers[i]
         label.style.userSelect = 'none'
+        label.style.display = 'inline-block'
         div.appendChild(label);
 
         div.addEventListener('click', function answerClick() {
@@ -116,6 +138,22 @@ function showQuestionAndAnswers() {
             
         })
     }
+
+
+    //tutte le risposte le imposto alla stessa lunghezza (width)
+    let maxLabelLength = currentInputButtons[0].parentNode.childNodes[1].offsetWidth
+
+    for(let i =1;i<currentInputButtons.length; i++) {
+        if(currentInputButtons[i].parentNode.childNodes[1].offsetWidth > maxLabelLength){
+            maxLabelLength = currentInputButtons[i].parentNode.childNodes[1].offsetWidth
+        }
+    }
+
+    for(let i = 0; i<currentInputButtons.length;i++) {
+        let label = currentInputButtons[i].parentNode.childNodes[1]
+        label.style.minWidth = maxLabelLength + 'px'
+    }
+
 
     index++;
 }
