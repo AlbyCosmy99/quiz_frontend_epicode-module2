@@ -6,8 +6,9 @@ let points = 0;
 
 let index = 0;
 
-const TIME_PER_QUESTION = 360
+const TIME_PER_QUESTION = 30
 let timeouts = []
+let timeCircle = document.querySelector('.tondo')
 
 let inputButtons = []
 const INPUT_ATTRIBUTE_NAME = 'question'
@@ -168,6 +169,9 @@ function setTime(start, timeout) {
     timeouts.push(
         setTimeout(function(){
             time.innerHTML = start
+            let currentTimePercentage = (start/TIME_PER_QUESTION)*100
+            let currentGrade = (360*currentTimePercentage)/100
+            timeCircle.style.borderImage = 'conic-gradient(transparent 0deg ' + (360 - currentGrade) + 'deg, #00FFFF ' + (360 - currentGrade) + 'deg 360deg) 1'
     
             if(start === 0) {
                 nextQuestion()
