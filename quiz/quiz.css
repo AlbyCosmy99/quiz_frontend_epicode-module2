@@ -26,7 +26,6 @@ header h1 {
     color: white; 
 }
 
-
 .testing .tondo {
     position: absolute;
     top: 20px;
@@ -150,18 +149,9 @@ input[type=radio]:checked+label {
     user-select: none;
 }
 
-body {
-    background-image: url(/assets/bg.jpg);
-    background-repeat: no-repeat;                               /*SFONDO*/
-    background-size: cover;
-}
-
-
-
-
 img {
     text-align: center;
-    width: 150px;                        /*IMMAGINE EPICODE*/
+    width: 150px;   
 
 }
 
@@ -171,37 +161,38 @@ img {
 
 }
 
+
+
+
+/* results */
+
 #finalText {
     color: white;
-    text-align: center;
-    position: absolute;                   /*PECCATO NON HAI SUPERATO IL TEST*/
+    text-align: center; 
     bottom: 300px;
+    margin-top: 200px;
+    font-size: 60px;
 }
 
-h4 {
-    color: white;                      /*RISPOSTE CORRETTE*/
-    text-align: center;
-
-
-}
-
-
-
-.circularPercentageVisualization {                     /*CERCHIO*/
+h4.correctAnswersNum {
+    color: white;                
     text-align: center;
 }
-
-
-/* css results  (SERENA) */
+h4.wrongAnswersNum {
+    color: white;                      
+    text-align: center;
+}
 
 .results {
     display: none;
+    font-size: 30px;
+    margin-top: 40px;
+    user-select: none;
 }
 
-/* i attributi width e height possono essere modificati a piacimento ma no tolti. Inoltre i due attributi devono essere uguali tra loro. */
 .circularPercentageVisualization {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-
+    margin: auto;
 }
