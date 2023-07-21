@@ -69,6 +69,7 @@ h3 #questionNumber {
     align-items: center;
     margin-top: 10rem;
     height: 400px;
+    margin-top: 100px;
 }
 
 #proceedBtn{
@@ -96,6 +97,9 @@ h3 #questionNumber {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: absolute;
+    bottom: 30%;
+    right: 38%;
 }
 
 h2{
@@ -213,10 +217,4 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-}
-
-.bottom {
-    position: absolute;
-    bottom: 30%;
-    right: 39%;
 }
