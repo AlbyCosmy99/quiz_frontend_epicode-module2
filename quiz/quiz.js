@@ -6,7 +6,7 @@ let points = 0;
 
 let index = 0;
 
-const TIME_PER_QUESTION = 300
+const TIME_PER_QUESTION = 30
 
 let timeouts = []
 let timeCircle = document.querySelector('.tondo')
@@ -32,7 +32,7 @@ let currentInputButtons = []
 
 window.onload = function load(){
     nextQuestion()
-    
+
     const btn = document.querySelector('#' + PROCEED_BTN_ID_NAME)
     btn.addEventListener('click',nextQuestion)
 
@@ -93,13 +93,13 @@ function showQuestionAndAnswers() {
     p2.style.margin = '0px'
 
 
-    //divido la domanda in due righe e metto la seconda riga 'bold()'
+    //divido la domanda in due righe
     let currentQuestion = question.question
     let arrayCharsQuestion = currentQuestion.split(' ')
     let firstHalfQuestion = arrayCharsQuestion.slice(0,arrayCharsQuestion.length/2).join(' ')
     let secondHalfQuestion = arrayCharsQuestion.slice(arrayCharsQuestion.length/2, arrayCharsQuestion.length).join(' ')
     p1.innerHTML = firstHalfQuestion
-    p2.innerHTML = secondHalfQuestion.bold()
+    p2.innerHTML = secondHalfQuestion //.bold()
 
     h2.appendChild(p1)
     h2.appendChild(p2)
@@ -154,7 +154,6 @@ function showQuestionAndAnswers() {
         label.style.minWidth = maxLabelLength + 'px'
     }
 
-
     index++;
 }
 
@@ -204,16 +203,17 @@ function showResults() {
 
 //countdown 
 
-function setTime(start, timeout) {
+function setTime(timeRemaining, timeout) {
     let time = document.querySelector('#time')
     timeouts.push(
         setTimeout(function(){
-            time.innerHTML = start
-            let currentTimePercentage = (start/TIME_PER_QUESTION)*100
+            time.innerHTML = timeRemaining
+            let currentTimePercentage = (timeRemaining/TIME_PER_QUESTION)*100
             let currentGrade = (360*currentTimePercentage)/100
             timeCircle.style.borderImage = 'conic-gradient(transparent 0deg ' + (360 - currentGrade) + 'deg, #00FFFF ' + (360 - currentGrade) + 'deg 360deg) 1'
-    
-            if(start === 0) {
+            colorFooter()
+
+            if(timeRemaining === 0) {
                 nextQuestion()
             }
         },timeout)
@@ -226,5 +226,14 @@ function timeout(timeout = 1000) {
     while(currentTime >= 0){
         let timeValue = (_start-currentTime) + 1
         setTime(currentTime--, 1000*timeValue)
+    }
+}
+
+function colorFooter() {
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    let names = document.querySelectorAll('footer b')
+
+    for(let name of names) { 
+        name.style.color = '#' + randomColor
     }
 }
