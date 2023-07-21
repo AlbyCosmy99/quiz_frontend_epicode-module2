@@ -101,3 +101,7 @@ ul {
     box-shadow: #75FBFD 0px 0px 20px;
     transition: 0.3s;
 }
+
+input{
+    height: 15px !important;
+}
