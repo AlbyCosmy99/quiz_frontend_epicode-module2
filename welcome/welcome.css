@@ -106,6 +106,6 @@ input{
     height: 15px !important;
 }
 
-.welcomeTitle, .instructions, .left {
+.welcomeTitle, .instructions, .left, .logo {
     user-select: none;
 }
