@@ -64,6 +64,26 @@ ul {
     font-size: 14px;
 }
 
+/* checkbox bianco come il vero benchmark di EPICODE */
+.left input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid white; /* Settare border, width e colore */
+    outline: none;
+    transition: border-color 0.2s;
+    position: relative;
+    cursor: pointer;
+    background: transparent; /* background trasparente */
+}
+
+.left input:checked{
+    background-color: white;    /* cambiare background del checkbox da trasparente a bianco */;
+}
+
+/* +++++++++++++++++++ */
 .cta {
     padding: 16px 48px 16px 48px;
     font-family: 'Outfit', sans-serif;
