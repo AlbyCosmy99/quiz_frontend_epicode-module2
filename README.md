@@ -5,7 +5,7 @@
   Languages used: <b>HTML</b>, <b>CSS</b> and <b>Javascript</b>
 </p>
 
-A quiz page webpage with three sections:
+A quiz webpage with three sections:
 <ul>
   <li>Welcome section</li>
   <li>Quiz section</li>
