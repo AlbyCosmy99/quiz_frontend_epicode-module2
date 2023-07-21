@@ -166,6 +166,7 @@ function shuffleAnswers(arr) {
 function showResults() {
     let resultsContainer = document.querySelector('.results')
     let testContainer = document.querySelector('.testing')
+    let bottomPart = document.querySelector('.bottom')
 
     let pointsText = document.querySelector('#points')
     let percentage = (points/MAX_QUESTIONS)*100
@@ -198,6 +199,7 @@ function showResults() {
     //show results
     resultsContainer.style.display = 'block'
     testContainer.style.display = 'none'
+    bottomPart.style.display = 'none'
 }
 
 //countdown 

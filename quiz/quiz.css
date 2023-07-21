@@ -58,8 +58,6 @@ h3 #questionNumber {
     font-family: 'Outfit', sans-serif;
     font-weight: 100;
     letter-spacing: 0.2rem;
-    position: relative;
-    left: 100px;
 }
 
 /* Aggiunta dello stile per le risposte con radio button */
@@ -70,6 +68,9 @@ h3 #questionNumber {
     margin-top: 10rem;
     height: 400px;
     margin-top: 100px;
+    text-align: center;
+    color: white;
+
 }
 
 #proceedBtn{
@@ -82,8 +83,6 @@ h3 #questionNumber {
     background-color: #75FBFD;
     transition: 0.3s;
     cursor: pointer;
-    position: relative;
-    left: 23rem;
 }
 
 #proceedBtn:hover{
@@ -94,12 +93,9 @@ h3 #questionNumber {
 
 .bottom{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: 20px;
-    position: absolute;
-    bottom: 30%;
-    right: 38%;
 }
 
 h2{
@@ -165,12 +161,6 @@ input[type=radio]:checked+label {
 img {
     text-align: center;
     width: 150px;   
-
-}
-
-.testing {
-    text-align: center;
-    color: white;
 
 }
 
