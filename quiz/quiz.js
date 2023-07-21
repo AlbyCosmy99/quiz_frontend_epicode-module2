@@ -135,7 +135,6 @@ function showQuestionAndAnswers() {
             else {
                 input.checked = false
             }
-            
         })
     }
 
