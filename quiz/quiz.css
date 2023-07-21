@@ -8,7 +8,6 @@ body {
     color: white; /* Testo bianco per tutto il body */
     display: flex;
     flex-direction: column;
-    height: 100vh; 
 }
 
 header {
@@ -118,11 +117,12 @@ input[type=radio] {
 input[type=radio]+label {
     cursor: pointer;
     padding: 1.5em;
-    background: #ffffff8e;
+    background-color: rgba(255,255,255,0.2);
     color: white;
-    border-radius: 8px; /* Aggiunto bordo arrotondato per simularne l'aspetto di un bottone */
+    border-radius: 40px;
     margin: 5px 0; /* Aggiunto margine per separare le risposte */
     transition: background 0.2s; /* Animazione del colore di sfondo al passaggio del cursore */
+    border: 3px solid rgba(255,255,255,0.5);
 }
 
 /* input[type=radio]+label:hover {
@@ -143,6 +143,15 @@ input[type=radio]:checked+label {
     flex-wrap: wrap;
     gap: 10px;
     margin: 0px;
+    width: 550px;
+}
+
+.item {
+    flex-basis: 49%;
+}
+
+#backslash, #maxquestionNumber {
+    color: #d20094;
 }
 
 .numberOfQuestion {
@@ -160,8 +169,6 @@ img {
     color: white;
 
 }
-
-
 
 
 /* results */
@@ -195,4 +202,15 @@ h4.wrongAnswersNum {
     height: 200px;
     border-radius: 50%;
     margin: auto;
+    border: 2px solid white;
+}
+
+/* footer */
+
+footer {
+    text-align: center;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
