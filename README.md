@@ -1,5 +1,5 @@
 <p>
-  This project is a final project of the module 2 of the Epicode Course 'Full Stack Developer'.
+  This project is a final project of the module 2 (of 7) of the Epicode Course 'Full Stack Developer'.
 </p>
 <p>
   Languages used: <b>HTML</b>, <b>CSS</b> and <b>Javascript</b>
