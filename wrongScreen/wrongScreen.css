@@ -1,0 +1,11 @@
+body {
+    background-image: url('../assets/bg.jpg');
+}
+p {
+    color: red;
+    text-align: center;
+    font-size: 25px;
+}
+div {
+    margin-top: 250px;
+}
