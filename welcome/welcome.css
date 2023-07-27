@@ -12,7 +12,7 @@ body {
     height: 95vh;
     margin: auto;
     padding-top: 36px;
-    background-image: url(../assets/bg.jpg);
+    background-image: url('../assets/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
