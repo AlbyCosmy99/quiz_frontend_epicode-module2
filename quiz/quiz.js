@@ -30,7 +30,7 @@ let maxQuestionNumberTag = document.querySelector('#maxquestionNumber')
 
 let currentInputButtons = []
 
-window.onload = function load(){
+window.onload = function load() {
     nextQuestion()
 
     const btn = document.querySelector('#' + PROCEED_BTN_ID_NAME)
@@ -229,6 +229,9 @@ function timeout(timeout = 1000) {
         setTime(currentTime--, 1000*timeValue)
     }
 }
+
+
+//nomi colorati
 
 function colorFooter() {
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
