@@ -181,11 +181,11 @@ function showResults() {
     const PASSED_TEST_POINTS = Math.ceil((shuffledQuestions.length*6)/10)
 
     if(points >= PASSED_TEST_POINTS) {
-        finalText.innerHTML = 'Complimenti, Hai superato il test!'
+        finalText.innerHTML = 'Congratulations, You passed the test!'
         finalText.style.color = 'green'
     }
     else {
-        finalText.innerHTML = 'Peccato, non hai superato il test!'
+        finalText.innerHTML = 'Too bad, you failed the test!'
         finalText.style.color = 'red'
     }
 
