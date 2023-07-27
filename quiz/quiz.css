@@ -1,7 +1,7 @@
 /* css quiz */
 
 body {
-    background-image: url("/assets/bg.jpg");
+    background-image: url("../assets/bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -207,4 +207,5 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+    user-select: none;
 }
