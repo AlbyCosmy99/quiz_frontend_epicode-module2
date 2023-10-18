@@ -109,3 +109,125 @@ input{
 .welcomeTitle, .instructions, .left, .logo {
     user-select: none;
 }
+
+@media screen and (max-width: 400px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    header .logo{
+        width: 150px;
+    }
+    
+    body {
+        width: 70%;
+        height: 95vh;
+        margin: auto;
+        padding-top: 36px;
+        background-image: url('../assets/bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    main {
+        padding: 7vh 0 0 0;
+    }
+    
+    h1 {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 400;
+        font-size: 60px;
+        line-height: 3rem;
+        color: white;
+        margin-bottom: 32px;
+    }
+    
+    h3 {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 3rem;
+        color: #B22B8A;
+    }
+    
+    
+    p,ul,li{
+        color: white;
+        font-family: 'Inter', sans-serif;
+        font-weight: 300;
+        font-size: 1.8vh;
+    }
+    
+    ul {
+        padding: 40px;
+        line-height: 1.5rem;
+    }
+    
+    .preQuiz {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        flex-wrap: wrap;
+        gap: 2vh;
+    }
+    
+    .left {
+        font-weight: 500;
+        font-size: 14px;
+    }
+    
+    /* checkbox bianco come il vero benchmark di EPICODE */
+    .left input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border: 2px solid white; /* Settare border, width e colore */
+        outline: none;
+        transition: border-color 0.2s;
+        position: relative;
+        cursor: pointer;
+        background: transparent; /* background trasparente */
+    }
+    
+    .left input:checked{
+        background-color: white;    /* cambiare background del checkbox da trasparente a bianco */;
+    }
+    
+    /* +++++++++++++++++++ */
+    .cta {
+        padding: 16px 48px 16px 48px;
+        font-family: 'Outfit', sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 0;
+        border: 0;
+        background-color: #75FBFD;
+        transition: 0.3s;
+        cursor: not-allowed;
+    }
+    
+    .cta:hover{
+        background-color: #75FBFD;
+        box-shadow: #75FBFD 0px 0px 20px;
+        transition: 0.3s;
+    }
+    
+    input{
+        height: 15px !important;
+    }
+    
+    .instructions, .left, .logo {
+        user-select: none;
+    }
+
+    .welcomeTitle {
+        font-size: 6vh;
+        user-select: none;
+    }
+}
