@@ -1,5 +1,3 @@
-//let button = document.querySelector('.cta')
-
 window.onload = function onLoad() {
     const button = document.querySelector('.cta')
     button.disabled = true
@@ -22,5 +20,14 @@ function proceedUnlock() {
 function resetCheckBox() {
     const checkbox = document.querySelector('input')
     checkbox.checked = false 
+}
+
+function proceed() {
+    if(screen.width >= 1400) {
+        window.location.href = '../quiz/quiz.html'
+    }
+    else {
+        window.location.href = '../wrongScreen/wrongScreen.html'
+    }
 }
 
