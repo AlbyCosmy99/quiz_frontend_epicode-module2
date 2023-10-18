@@ -437,4 +437,9 @@ footer {
         margin: 0 0 2vh 0;
         padding: 0;
     }
+
+    .finalText {
+        margin-top: 12vh;
+        font-size: 1em;
+    }
 }
