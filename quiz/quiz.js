@@ -126,7 +126,7 @@ function showQuestionAndAnswers() {
         label.style.display = 'inline-block'
         div.appendChild(label);
 
-        div.addEventListener('click', () => {
+        div.addEventListener('click', function answerClick() {
             let children = this.childNodes
             let input = children[0]
             if(!input.checked) {
